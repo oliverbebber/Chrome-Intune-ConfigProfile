@@ -4,8 +4,14 @@ When uploading the Chrome Policy templates and Update management templates to Mi
 
 ```ADMX file referenced not found NamespaceMissing:Microsoft.Policies.Windows. Please upload it first.```
 
-Removing the following from `GoogleUpdate.admx` and `Chrome.admx` resolved the error:
+Removing the following from `GoogleUpdate.admx` resolved the error:
 
 ```xml
 <using prefix="windows" namespace="Microsoft.Policies.Windows" /> 
+```
+
+Removing the following from `Chrome.admx` resolved the error:
+
+```xml
+<using namespace="Microsoft.Policies.Windows" prefix="windows"/>
 ```
